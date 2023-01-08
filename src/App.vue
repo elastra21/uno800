@@ -29,13 +29,14 @@
       >
         <v-card-text>
           <v-icon
-            v-for="icon in icons"
-            :key="icon"
+            v-for="media in social_media"
+            :key="media.name"
             class="mx-4"
             color="black"
             size="30px"
+            @click="openURL(media.url)"
           >
-            {{ icon }}
+            {{ media.icon }}
           </v-icon>
         </v-card-text>
 
@@ -70,12 +71,29 @@ export default {
   name: "App",
 
   data: () => ({
-    icons: ["mdi-facebook", "mdi-instagram"],
+    social_media: [
+      {
+        name: "facebook",
+        icon:"mdi-facebook",
+        url: "https://www.facebook.com/Uno800Cafe",
+      },
+      {
+        name: "instagram",
+        icon:"mdi-instagram",
+        url: "https://www.instagram.com/uno800cafe/",
+      },
+    ],
+    menuUrl:
+      "https://www.foodbooking.com/ordering/restaurant/menu?company_uid=f3dbcba5-d95b-4b90-aae8-36154f89ecd7&restaurant_uid=7d459545-e2bf-47af-ba44-2cd04b992f3d&facebook=true",
   }),
+
 
   methods: {
     goToMenu() {
-      window.open(this.menuUrl);
+      this.openURL(this.menuUrl);
+    },
+    openURL(url) {
+      window.open(url);
     },
     getImageUrl(name) {
       return new URL(`./assets/${name}`, import.meta.url).href;

@@ -26,9 +26,9 @@
         </v-carousel-item>
       </v-carousel>
     </v-row>
-    <v-parallax :src="getImageUrl('parallax-4.jpg')" class="menu">
+    <v-parallax :src="getImageUrl('parallax-4.jpg')" class="menu elevation-3">
       <div class="content">
-        <h>Visita nuestro menú en línea</h>
+        <h1>Visita nuestro menú en línea</h1>
         <v-btn class="mt-4" variant="outlined" @click="goToMenu()">
           <v-icon class="mr-2">mdi-cart</v-icon> ver más
         </v-btn>
@@ -38,11 +38,23 @@
 
   <v-container class="bottom pb-0">
     <v-row>
+     <v-col class="pr-0 pb-0" style="height: 650px;max-height: 650px;">
+      <v-img cover height="100%" :src="getImageUrl('metodos.jpeg')"/>
+     </v-col>
+     <v-col v-if="!$vuetify.display.smAndDown" style="height: 650px;max-height: 650px;" class="d-flex flex-column ">
+      <v-img cover class="mb-3" height="50%" aspect-ratio="1" :src="getImageUrl('tasa.jpeg')"/>
+      <v-img cover height="50%" aspect-ratio="1" :src="getImageUrl('tostados.jpeg')"/>
+     </v-col>
+     <v-col v-if="!$vuetify.display.xs" class="pl-0 pb-0" style="height: 650px;max-height: 650px;">
+      <v-img cover height="100%" :src="getImageUrl('granos.jpeg')"/>
+     </v-col>
+    </v-row>
+    <v-row>
       <v-col cols="12" class="text-center">
         <h1 class="mt-4 mb-0">Nuestros productos</h1>
-        <!-- <p class="mt-0">Nuestros productos son de la mejor calidad</p> -->
       </v-col>
       <v-col
+        class="d-flex flex-column justify-center align-center"
         v-for="(coffee, index) in coffees"
         :data-aos="`fade-${!index ? 'right' : index == 1 ? 'up' : 'left'}`"
         cols="12"
@@ -55,6 +67,7 @@
           <v-img
             aspect-ratio="1"
             cover
+            width="300"
             :src="coffee.img"
             gradient="to top right, rgba(100,115,201,.33), rgba(25,32,72,.7)"
             v-bind="props"
@@ -80,10 +93,13 @@
             </v-fade-transition>
           </v-img>
         </v-hover>
+        <h3>{{ coffee.name }}</h3>
+        <h4>{{coffee.origen}}</h4>
       </v-col>
     </v-row>
+
     <v-row class="mt-10">
-      <v-col class="d-flex align-center flex-column">
+      <v-col data-aos="fade-right" class="d-flex align-center flex-column">
         <h1 class="mt-9">UNO 800 CAFÉ</h1>
         <v-img
           :src="getImageUrl('uno800.png')"
@@ -92,7 +108,7 @@
           width="300px"
         ></v-img>
       </v-col>
-      <v-col>
+      <v-col data-aos="fade-left">
         <p>
           ¡Bienvenidos a Uno 800 Brew Dispatch!<br/><br/> Somos una empresa de café
           especializada en ofrecer el mejor café de Jaltenango de la Paz,
