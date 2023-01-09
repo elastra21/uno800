@@ -2,7 +2,12 @@
 
 ## Project setup
 ```
-npm install
+- Download NodeJs
+- npm install -g @vue/cli
+
+Inside of the directory
+
+- npm install
 ```
 
 ### Compiles and hot-reloads for development
