@@ -1,0 +1,68 @@
+{
+  "home": {
+    "slider": [
+      {
+        "title": "",
+        "description": "<h1 class=\"white--text mobile-h3 carousel-title\" > Instituto de Investigaciones Oceanológicas</h1> <br>",
+        "image": "iio_slider2.jpeg",
+        "link": "{\"route\":\"/nosotros\"}"
+      }
+    ],
+    "products": [
+      {
+        "img": "https://img.freepik.com/free-photo/closeup-shot-roasted-coffee-beans_181624-38585.jpg",
+        "name": "Festivus",
+        "grain": "Jaltenango de la Paz",
+        "origen": "Chiapas, MX",
+        "roast": "Tueste Medio-Oscuro",
+        "weight": [250, 500]
+      },
+      {
+        "img": "https://img.freepik.com/free-photo/closeup-shot-roasted-coffee-beans_181624-38585.jpg",
+        "name": "Mezcla de la Casa",
+        "grain": "Jaltenango de la Paz",
+        "origen": "Chiapas, MX",
+        "roast": "Tueste Medio",
+        "weight": [250]
+      },
+      {
+        "img": "https://img.freepik.com/free-photo/closeup-shot-roasted-coffee-beans_181624-38585.jpg",
+        "name": "Morush Tzeltal",
+        "grain": "Kulak Tip",
+        "origen": "Chiapas, MX",
+        "roast": "Tueste Medio",
+        "weight": [250]
+      }
+    ],
+    "menu_url": "https://www.foodbooking.com/ordering/restaurant/menu?company_uid=f3dbcba5-d95b-4b90-aae8-36154f89ecd7&restaurant_uid=7d459545-e2bf-47af-ba44-2cd04b992f3d&facebook=true",
+    "gallery": [
+      { "title": "", "url": "estudiante.jpeg" },
+      { "title": "", "url": "muelle.jpeg" },
+      { "title": "", "url": "surf.jpeg" },
+      { "title": "", "url": "poste.jpeg" },
+      { "title": "", "url": "ensenada.jpeg" },
+      { "title": "", "url": "estacionamiento.jpeg" },
+      { "title": "", "url": "puerto.jpeg" }
+    ]
+  },
+  "about": {
+    "phone": "(686)514-38-88",
+    "social_media": [
+      {
+        "name": "facebook",
+        "icon":"mdi-facebook",
+        "url": "https://www.facebook.com/Uno800Cafe"
+      },
+      {
+        "name": "instagram",
+        "icon":"mdi-instagram",
+        "url": "https://www.instagram.com/uno800cafe/"
+      }
+    ],
+    "history": "¡Bienvenidos a Uno 800 Brew Dispatch!<br /><br /> Somos una empresa de café especializada en ofrecer el mejor café de Jaltenango de la Paz, Chiapas. Nos esforzamos por brindar una experiencia única a nuestros clientes, desde el momento en que reciben su primer paquete de café hasta cada sorbo que toman de cada taza.<br /><br />Nuestro proceso de producción comienza en la plantación de café en Jaltenango de la Paz, donde seleccionamos cuidadosamente solo los granos más frescos y de alta calidad. Luego, tostamos el café localmente para asegurar un sabor único y delicioso.<br /><br /> Para aquellos que quieren disfrutar de nuestro café sin tener que salir de casa, ofrecemos servicio a domicilio. ¡Así que puedes tener tu taza de café fresco todas las mañanas sin tener que preocuparte por salir de casa!<br /><br /> Si quieres asegurarte de no quedarte sin tu café favorito, ¡consideremos unirte a nuestro programa de suscripción! Al hacerlo, recibirás paquetes de nuestro delicioso café de Jaltenango de la Paz de manera periódica y sin tener que preocuparte por hacer el pedido cada vez. ¡Esperamos que te unas a nosotros en esta aventura de descubrir el mejor café que Jaltenango de la Paz, Chiapas tiene para ofrecer!",
+    "address": "Av Misión de San Diego 3287, Hacienda Dorada, 21376 Mexicali, B.C.",
+    "maps_link":"https://maps.google.com/maps?q=Uno%20800%20Caf%C3%A9&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;&output=embed",
+    "footer_text":"Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada."
+
+  }
+}

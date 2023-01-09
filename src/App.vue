@@ -1,7 +1,8 @@
+<!-- All the data of the website is in the "home.json" file, located in the path "public/config/" -->
+
 <template>
   <v-app class="main-app">
     <v-app-bar absolute color="#f0b537" scroll-target="#scrolling-techniques-6">
-      <!-- <v-toolbar-title>Collapsing Bar</v-toolbar-title> -->
       <div class="d-flex flex-row align-center">
         <v-img
           width="100px"
@@ -10,11 +11,35 @@
         ></v-img>
       </div>
       <div class="navbar-logo mr-3">UNO 800 Brew dispatch</div>
-      <v-spacer v-if="$vuetify.display.smAndUp"></v-spacer>
+      <v-spacer></v-spacer>
       <div v-if="$vuetify.display.smAndUp">
         <v-btn @click="goToMenu()" text class="nav-link"> menú </v-btn>
-        <v-btn text class="nav-link"> ubicación </v-btn>
-        <v-btn text class="nav-link"> contacto </v-btn>
+        <v-btn @click="goToTarget('about-us')" text class="nav-link">
+          Nosotros
+        </v-btn>
+        <v-btn @click="goToTarget('location')" text class="nav-link">
+          ubicación
+        </v-btn>
+      </div>
+      <div class="mobile-menu" v-else>
+        <v-menu transition="slide-y-transition">
+          <template v-slot:activator="{ props }">
+            <v-btn icon color="rgb(59, 57, 55)" v-bind="props">
+              <v-icon>mdi-menu</v-icon>
+            </v-btn>
+          </template>
+          <v-list width="100vw">
+            <v-list-item>
+              <v-list-item-title @click="goToMenu">Menu</v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title @click="goToTarget('about-us')">Nosotros</v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title @click="goToTarget('location')">Ubicación</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </div>
     </v-app-bar>
     <v-main>
@@ -29,7 +54,7 @@
       >
         <v-card-text>
           <v-icon
-            v-for="media in social_media"
+            v-for="media in $info.about.social_media"
             :key="media.name"
             class="mx-4"
             color="black"
@@ -40,12 +65,7 @@
           </v-icon>
         </v-card-text>
 
-        <v-card-text class="footer-text pt-0">
-          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
-          Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
-          accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim
-          a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula
-          lacinia malesuada.
+        <v-card-text class="footer-text pt-0" v-html="$info.about.footer_text">
         </v-card-text>
 
         <v-divider></v-divider>
@@ -69,34 +89,22 @@
 <script>
 export default {
   name: "App",
-
-  data: () => ({
-    social_media: [
-      {
-        name: "facebook",
-        icon:"mdi-facebook",
-        url: "https://www.facebook.com/Uno800Cafe",
-      },
-      {
-        name: "instagram",
-        icon:"mdi-instagram",
-        url: "https://www.instagram.com/uno800cafe/",
-      },
-    ],
-    menuUrl:
-      "https://www.foodbooking.com/ordering/restaurant/menu?company_uid=f3dbcba5-d95b-4b90-aae8-36154f89ecd7&restaurant_uid=7d459545-e2bf-47af-ba44-2cd04b992f3d&facebook=true",
-  }),
-
-
   methods: {
     goToMenu() {
-      this.openURL(this.menuUrl);
+      this.openURL(this.$info.home.menu_url);
     },
     openURL(url) {
       window.open(url);
     },
     getImageUrl(name) {
       return new URL(`./assets/${name}`, import.meta.url).href;
+    },
+    goToTarget(DOM_id) {
+      window.scrollTo({
+        top: document.getElementById(DOM_id).offsetTop,
+        left: 0,
+        behavior: "smooth",
+      });
     },
   },
 };
@@ -125,8 +133,13 @@ export default {
 }
 </style>
 
-<style>
+<style lang="scss">
 html {
   /* font-family: 'Montserrat' !important; */
+}
+
+.v-overlay__content {
+  top: 64px !important;
+  left: 0 !important;
 }
 </style>
