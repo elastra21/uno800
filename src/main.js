@@ -17,7 +17,7 @@ fetch(import.meta.env.BASE_URL + "config/home.json")
     app.config.globalProperties.$info = info
       app.use(
         AOS.init({
-          duration: 0,
+          duration: 900,
         })
       )
       app.use(router)
